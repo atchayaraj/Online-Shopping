@@ -15,44 +15,44 @@ class UserAccountOperations {
     	System.out.println("Username      : "+getStorageInstance().getUserAccount(userId).getUsername());
     	System.out.println("Password      : "+getStorageInstance().getUserAccount(userId).getPassword());
     }
-	public static void addDeliveryAddress(int userId,Address deliveryAddress) {
-		getStorageInstance().getUserAccount(userId).setDeliveryAddress(deliveryAddress);
-	}
-	public static void editDeliveryAddress(int userId) {
-		Address deliveryAddress = new Address();
-		getStorageInstance().getUserAccount(userId).setDeliveryAddress(deliveryAddress);
-	}
+    public static void addDeliveryAddress(int userId,Address deliveryAddress) {
+	getStorageInstance().getUserAccount(userId).setDeliveryAddress(deliveryAddress);
+    }
+    public static void editDeliveryAddress(int userId) {
+	Address deliveryAddress = new Address();
+	getStorageInstance().getUserAccount(userId).setDeliveryAddress(deliveryAddress);
+    }
     public static void deleteDeliveryAddress(int userId) {
     	getStorageInstance().getUserAccount(userId).setDeliveryAddress(null);
     }
-	public static void editProfile(int userId) {
-		System.out.println("Enter 1 : Gender");
-		System.out.println("Enter 2 : Address");
-		System.out.println("Enter 3 : Mobile Number");
-		System.out.println("Enter 4 : Email Id");
-		int choice = Integer.parseInt(Input.getString());
-		switch(choice) {
-		case 1:
-			PersonalDetails personalDetails = getStorageInstance().getUserAccount(userId).getProfile().getPersonalDetails();
-			personalDetails.setGender();
-			break;
-		case 2:
-			personalDetails = getStorageInstance().getUserAccount(userId).getProfile().getPersonalDetails();
-			personalDetails.setAddress();
-			break;
-		case 3:
-			ContactDetails contactDetails = getStorageInstance().getUserAccount(userId).getProfile().getContactDetails();
-			contactDetails.setMobileNumber();
-			break;
-		case 4:
-			contactDetails = getStorageInstance().getUserAccount(userId).getProfile().getContactDetails();
-			contactDetails.setEmailId();
-			break;
-		default:
-			System.out.println("Invalid Choice \n");
-			break;
-		}
+    public static void editProfile(int userId) {
+	System.out.println("Enter 1 : Gender");
+	System.out.println("Enter 2 : Address");
+	System.out.println("Enter 3 : Mobile Number");
+	System.out.println("Enter 4 : Email Id");
+	int choice = Integer.parseInt(Input.getString());
+	switch(choice) {
+	case 1:
+		PersonalDetails personalDetails = getStorageInstance().getUserAccount(userId).getProfile().getPersonalDetails();
+		personalDetails.setGender();
+		break;
+	case 2:
+		personalDetails = getStorageInstance().getUserAccount(userId).getProfile().getPersonalDetails();
+		personalDetails.setAddress();
+		break;
+	case 3:
+		ContactDetails contactDetails = getStorageInstance().getUserAccount(userId).getProfile().getContactDetails();
+		contactDetails.setMobileNumber();
+		break;
+	case 4:
+		contactDetails = getStorageInstance().getUserAccount(userId).getProfile().getContactDetails();
+		contactDetails.setEmailId();
+		break;
+	default:
+		System.out.println("Invalid Choice \n");
+		break;
 	}
+    }
     public static void changeUsername(int userId) {
     	while(true) {
     		System.out.println("Enter new username : ");
