@@ -1,0 +1,6 @@
+
+class LogoutPage {
+	public boolean logout() {
+		return false;
+	}
+}
